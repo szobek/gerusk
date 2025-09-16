@@ -5,7 +5,7 @@ header {
     border-radius: 10px;
     min-height: 400px;
     position: relative;
-    padding: 30px 0;
+    
     .overlay {
         position: absolute;
         top: 0;
@@ -15,26 +15,89 @@ header {
         background: rgba(0, 0, 0, 0.4);
         /* fekete, 40%-os áttetszőség */
     }
-    .menu{
-        position: relative;
+
+    .wrapper {
+        padding: 30px ;
         z-index: 1;
-        width: fit-content;
-margin: auto;
-        ul{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            li{
-                display: inline-block;
-                margin-right: 20px;
-                a{
-                    color: white;
-                    text-decoration: none;
-                    &:hover{
-                        text-decoration: underline;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+
+        .logo {
+            width: fit-content;
+        }
+
+
+
+        nav {
+            position: relative;
+            width: fit-content;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline-block;
+                    margin-right: 20px;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
         }
+
+        .caller-btn {
+            a {
+                width: fit-content;
+                padding: 10px 20px;
+                background-color: #ff6600;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        }
+
+        .banner-text {
+            color: #fff;
+            width: 100%;
+        }
+    }
+}
+main{
+    .row-light{
+        background-color: #f4f4f4;
+    }
+    .row-dark,.row-light{
+        padding: 20px;
+        min-height: 300px;
+        height: auto;
+        width: 100%;
+
+    }
+    .row-dark{
+        background-color: #e2e2e2;
+    }
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+    /* opcionális, ha nem akarsz extra helyet */
+}
+
+.hide-in-small {
+    @media (max-width: 600px) {
+        display: none;
     }
 }
