@@ -1,5 +1,9 @@
+@import 'signup';
+
 body {
     font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://geru.sk/wp-content/uploads/2021/06/quotes-min.jpg') ;
+    background-attachment: fixed;
 }
 
 header {
@@ -96,6 +100,14 @@ main {
     .row-dark {
         background-color: #e2e2e2;
     }
+
+    .row-signup{
+        background-color: #faf5e5;
+    }
+
+    .row-transparent {
+        background-color: transparent;
+    }
 }
 
 .break {
@@ -108,4 +120,9 @@ main {
     @media (max-width: 600px) {
         display: none;
     }
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
 }

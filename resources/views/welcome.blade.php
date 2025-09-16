@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('body')
+
 <body>
     <header>
         <div class="wrapper">
@@ -23,13 +24,16 @@
         <div class="overlay"></div>
     </header>
     <main>
-        <x-caller-box />
-        <div class="row-light">
+            <x-caller-box />
+            <div class="row-transparent">
 
-        </div>
-        <div class="row-dark">
-            <x-signup-form />
-        </div>
+            </div>
+            <div class="row-signup">
+                <div class="wrapper">
+
+                    <x-signup-form />
+                </div>
+            </div>
     </main>
     <footer></footer>
 
