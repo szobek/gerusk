@@ -1,3 +1,7 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
 header {
     background: url('../assets/images/banner.jpg') no-repeat center center;
     background-size: cover;
@@ -5,7 +9,7 @@ header {
     border-radius: 10px;
     min-height: 400px;
     position: relative;
-    
+
     .overlay {
         position: absolute;
         top: 0;
@@ -17,7 +21,7 @@ header {
     }
 
     .wrapper {
-        padding: 30px ;
+        padding: 30px;
         z-index: 1;
         display: flex;
         justify-content: space-between;
@@ -74,18 +78,22 @@ header {
         }
     }
 }
-main{
-    .row-light{
+
+main {
+    .row-light {
         background-color: #f4f4f4;
     }
-    .row-dark,.row-light{
+
+    .row-dark,
+    .row-light {
         padding: 20px;
         min-height: 300px;
         height: auto;
         width: 100%;
 
     }
-    .row-dark{
+
+    .row-dark {
         background-color: #e2e2e2;
     }
 }

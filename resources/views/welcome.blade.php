@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Geru</title>
-    @vite(['resources/scss/app.scss',"resources/css/normalize.css", 'resources/js/app.js'])
-
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-
-    </style>
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-</head>
-
+@extends('layout.app')
+@section('body')
 <body>
     <header>
         <div class="wrapper">
@@ -51,11 +27,11 @@
         <div class="row-light">
 
         </div>
-        <div class="row-dark"></div>
+        <div class="row-dark">
+            <x-signup-form />
+        </div>
     </main>
     <footer></footer>
 
 
 </body>
-
-</html>
