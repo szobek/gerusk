@@ -6,6 +6,11 @@ use Illuminate\View\Component;
 
 class Menu extends Component
 {
+    public $links = [
+        ['label' => 'Domov', 'url' => '/'],
+        ['label' => 'Strešný náter', 'url' => '/stresny-nater'],
+        ['label' => 'Fasásdny náter', 'url' => '/fasadny-nater'],
+    ];
     /**
      * Create a new component instance.
      *

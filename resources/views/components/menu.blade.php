@@ -1,9 +1,7 @@
 <nav>
     <ul>
-        <li>
-            <a href="#">Domov</a>
-            <a href="#">Strešný náter</a>
-            <a href="#">Fasásdny náter</a>
-        </li>
+        @foreach ($links as $link )
+            <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
+        @endforeach
     </ul>
 </nav>
