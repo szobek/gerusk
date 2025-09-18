@@ -25,7 +25,7 @@
     </header>
     <main>
         <x-caller-box />
-
+<x-boxes />
         <div class="row-dark">
             <div class="wrapper">
                 <p>Naše služby</p>
