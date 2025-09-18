@@ -1,9 +1,10 @@
 @use 'signup';
 @use 'carousel';
-
+@use 'variables';
+@use 'darkRow';
 body {
     font-family: 'Nunito', sans-serif;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://geru.sk/wp-content/uploads/2021/06/quotes-min.jpg') ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://geru.sk/wp-content/uploads/2021/06/quotes-min.jpg');
     background-attachment: fixed;
 }
 
@@ -97,16 +98,15 @@ main {
         width: 100%;
 
     }
-    .row-house{
+
+    .row-house {
         background-color: #e8f0fe;
         background-image: url('https://geru.sk/wp-content/uploads/2021/06/shape-3.png');
     }
 
-    .row-dark {
-        background-color: #e2e2e2;
-    }
+   
 
-    .row-signup{
+    .row-signup {
         background-color: #faf5e5;
     }
 
@@ -131,4 +131,20 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.list-with-image-style{
+    list-style: none;
+    li{
+        padding-left: 30px;
+        margin-bottom: 10px;
+        svg{
+            width: 20px ;
+            height: 20px ;
+            position: absolute;
+            margin-left: -30px;
+            margin-top: 3px;
+            fill: variables.$primary-text-color;
+        }
+    }
 }
