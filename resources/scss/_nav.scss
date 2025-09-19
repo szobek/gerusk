@@ -1,0 +1,86 @@
+// Pl. resources/scss/components/_navigation.scss
+
+// Változók
+$breakpoint-desktop: 768px; // Az a képernyőszélesség, ahol a váltás történik
+$nav-background-mobile: #1a2238; // A mobil menü háttérszíne
+$nav-text-color: #ffffff;
+$nav-hover-color: #d4a356;
+
+.main-navigation {
+    position: relative; // Fontos a mobil menü pozicionálásához
+    display: flex;
+    align-items: center;
+
+    .hamburger-menu {
+        display: none; // Alapból rejtett (desktopon)
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001; // Legyen minden felett
+
+        .hamburger-icon rect {
+            fill: $nav-text-color; // A hamburger ikon színe
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-left: 25px;
+        }
+
+        a {
+            color: $nav-text-color;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $nav-hover-color;
+            }
+        }
+    }
+}
+
+// A reszponzív logika a @media query-ben
+@media (max-width: $breakpoint-desktop) {
+    .main-navigation {
+        .hamburger-menu {
+            display: block; // Megjelenik a hamburger ikon mobilon
+        }
+
+        .nav-links {
+            // A menü elrejtése és pozicionálása
+            position: absolute;
+            top: 100%; // A szülő nav elem tetejétől indul
+            right: 0;
+            background-color: $nav-background-mobile;
+            flex-direction: column; // A menüpontok egymás alá kerülnek
+            width: 250px; // A lenyíló menü szélessége
+            padding: 20px;
+            
+            // Látványos animáció a megjelenéshez
+            transform: translateX(100%); // Teljesen kitoljuk jobbra a képernyőről
+            visibility: hidden;
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s, visibility 0.3s;
+            
+            // Az 'active' osztály hatására jelenik meg a menü
+            &.active {
+                transform: translateX(0); // Visszatoljuk a helyére
+                visibility: visible;
+                opacity: 1;
+            }
+
+            li {
+                margin: 15px 0;
+                text-align: center;
+            }
+        }
+    }
+}

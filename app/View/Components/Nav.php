@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Menu extends Component
+class Nav extends Component
 {
     public $links = [
         ['label' => 'Domov', 'url' => '/'],
@@ -28,6 +28,6 @@ class Menu extends Component
      */
     public function render()
     {
-        return view('components.menu');
+        return view('components.nav');
     }
 }

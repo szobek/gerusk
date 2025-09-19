@@ -11,7 +11,7 @@
                     <img src="/images/logo.png" alt="Geru logo">
                 </a>
             </div>
-            <x-Menu />
+            <x-Nav />
             <div class="caller-btn hide-in-small">
                 <a href="tel:+36303517871">Zavolať teraz</a>
             </div>
