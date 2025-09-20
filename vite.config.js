@@ -8,10 +8,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-     server: { 
-        host: 'gerusk.szobekweb.hu', 
-        hmr: {
-            host: 'gerusk.szobekweb.hu', 
-        },
-    },
 });

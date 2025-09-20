@@ -6,7 +6,12 @@
 <body>
     <h1>Szia!</h1>
     <p>
-        Ez egy teszt e-mail küldése Laravel alkalmazásból.
+        Ez egy  e-mail küldése Laravel alkalmazásból mert felvették a kapcsolatot a szlovák oldalon.
+        @foreach ($data as $inputs => $value)
+            <br>
+            {{ $inputs }} : {{ $value }}
+            
+        @endforeach
     </p>
 </body>
 </html>

@@ -1,0 +1,54 @@
+@use 'variables';
+@use "sass:color";
+
+.contact-form {
+    flex:1;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    input,textarea{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .submit-form-button{
+        background-color: variables.$primary-text-color;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: color.adjust(variables.$primary-text-color, $lightness: -10%);
+        }
+    }
+}
+
+.contact-text{
+    flex:1;
+    margin-bottom: 20px;
+    h2{
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+.contact-all{
+    display: flex;
+}
+
+.is-invalid{
+    border: 2px solid red !important;
+}

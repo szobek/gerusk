@@ -1,9 +1,11 @@
-@use 'signup';
+@use 'contact';
 @use 'carousel';
 @use 'variables';
 @use 'darkRow';
 @use 'boxes';
 @use 'nav';
+@use 'buttons';
+
 body {
     font-family: 'Nunito', sans-serif;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://geru.sk/wp-content/uploads/2021/06/quotes-min.jpg');

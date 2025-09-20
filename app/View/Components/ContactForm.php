@@ -4,16 +4,17 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SignupForm extends Component
+class ContactForm extends Component
 {
+    public $sended;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($sended=false)
     {
-        //
+        $this->sended=$sended;
     }
 
     /**
@@ -23,6 +24,6 @@ class SignupForm extends Component
      */
     public function render()
     {
-        return view('components.signup-form');
+        return view('components.contact-form');
     }
 }

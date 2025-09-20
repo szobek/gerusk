@@ -1,0 +1,15 @@
+@use 'variables';
+.btn-base{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: none;
+    background-color: variables.$primary-text-color;
+    color: white;
+    font-weight: bold;
+}

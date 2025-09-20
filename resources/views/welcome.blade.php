@@ -121,7 +121,7 @@
         <div class="row-signup">
             <div class="wrapper">
 
-                <x-signup-form />
+                <x-contact-form :sended="$sended" />
             </div>
         </div>
     </main>

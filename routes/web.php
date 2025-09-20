@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Mail\TestEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,21 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $sended=false;
+    return view('welcome' ,compact('sended'));
 });
 
 
-Route::get('/send-test-email', function () {
+Route::any('/send-test-email', function (Request $request) {
+ $validatedData = $request->validate([
+        'name' => 'required|min:3',
+        'telephone' => 'required|min:3',
+        'address' => 'required|email|min:3', 
+        'type' => 'required|min:4',
+        'message' => 'required|min:10',
+    ]);
 
-    Mail::to("kunszt.norbert@gmail.com")->send(new TestEmail());
+    Mail::to("kunszt.norbert@gmail.com")->send(new TestEmail($validatedData));
 
-    return "Teszt e-mail elküldve!";
-});
+    return redirect('/')->with('sended', true);
+})->name('email.test');
