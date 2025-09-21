@@ -111,7 +111,7 @@
         </div>
 
         <div class="row-transparent">
-            <div class="wrapper">
+            <div class="wrapper text-center">
                 <p>Neviete, kde začať?</p>
                 <h2>Postaráme sa o vašu strechu aj fasádu <br>
                     efektívne a dlhotrvajúco</h2>
