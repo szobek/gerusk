@@ -125,7 +125,7 @@
             </div>
         </div>
     </main>
-    <footer></footer>
+    <x-footer />
 
 
 </body>
