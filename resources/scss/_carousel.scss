@@ -1,98 +1,147 @@
-@use "sass:math";
 @use 'variables';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+.carousel-section {
+    padding: 60px 0;
+    width: 100%;
+    overflow: hidden;
+}
 
+.carousel-title {
+    font-weight: 700;
+    color: variables.$primary-text-color;
+}
 
-    .carousel-section {
-        padding: 60px 20px;
-        background-color: variables.$carousel-background;
-        overflow: hidden;
+.carousel-subtitle {
+    color: #6c757d;
+    margin-bottom: 40px;
+}
 
-        .carousel-title {
-            color: variables.$primary-text-color;
-            font-weight: 700;
-        }
-    }
+.swiper-container-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.image-swiper {
+    width: 100%;
     
-    .carousel-container {
-        width: 100%;
-        display: flex;
+    .swiper-wrapper {
+        transition-timing-function: linear !important;
         align-items: center;
-
-        &:hover .carousel-track {
-            animation-play-state: paused;
-        }
     }
 
-    .carousel-track {
-        display: flex;
-        animation: scroll variables.$animation-duration linear infinite;
-        animation-play-state: running;
-    }
-
-    .carousel-slide {
-        flex: 0 0 variables.$slide-width;
-        margin: 0 math.div(variables.$slide-gap, 2);
+    .swiper-slide {
+        height: 250px;
         cursor: pointer;
-
+        
         img {
+            display: block;
             width: 100%;
-            height: variables.$slide-height;
+            height: 100%;
             object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-        }
-
-        &:hover img {
-            transform: scale(1.05);
-        }
-    }
-    
-    @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(#{ -(variables.$slide-width + variables.$slide-gap) } * var(--image-count))); }
-}
-    
-    .lightbox {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.85);
-        justify-content: center;
-        align-items: center;
-
-        &.active {
-            display: flex;
-        }
-
-        &-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            animation: zoomIn 0.3s ease-in-out;
-        }
-        
-        &-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
 
             &:hover {
-                color: #ccc;
+                transform: scale(1.05);
             }
         }
     }
-    
-    @keyframes zoomIn {
-        from { transform: scale(0.8); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #1a2238;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 1);
     }
+
+    &:after {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        display: flex;
+    }
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        color: #ccc;
+        transform: rotate(90deg);
+    }
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &.lightbox-prev {
+        left: 20px;
+    }
+
+    &.lightbox-next {
+        right: 20px;
+    }
+}

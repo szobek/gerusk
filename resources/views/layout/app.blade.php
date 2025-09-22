@@ -9,5 +9,7 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     @vite(['resources/scss/app.scss',"resources/css/normalize.css", 'resources/js/app.js'])
 </head>
-@yield('body')
+<body>
+    @yield('body')
+</body>
 </html>

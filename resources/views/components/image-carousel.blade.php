@@ -1,85 +1,40 @@
-<section id="{{ $id }}" class="carousel-section"  style="--image-count: {{ count($images) }};">
+<div class="carousel-section">
     @if ($title)
         <p class="carousel-title">{{ $title }}</p>
     @endif
     @if ($subtitle)
         <h2 class="carousel-subtitle">{{ $subtitle }}</h2>
     @endif
-
-    <div class="carousel-container">
-        <div class="carousel-track">
-            @forelse ($images as $image)
-                <div class="carousel-slide">
-                    <img src="{{ $image }}" alt="Carousel image">
-                </div>
-            @empty
-                {{-- If images array is empty --}}
-                <p>No images</p>
-            @endforelse
+    
+    <div class="swiper-container-wrapper">
+        <div 
+            class="swiper image-swiper" 
+            id="{{ $id }}"
+            data-images='@json($images)'
+        >
+            <div class="swiper-wrapper">
+                @forelse ($images as $index => $image)
+                    <div class="swiper-slide">
+                        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? 'Carousel kép' }}" data-index="{{ $index }}">
+                    </div>
+                @empty
+                    <div class="swiper-slide">
+                        <p>Nincsenek képek a galériában.</p>
+                    </div>
+                @endforelse
+            </div>
         </div>
+        
+       
     </div>
-</section>
+</div>
 
+{{-- A lightbox HTML kódja. A @once biztosítja, hogy csak egyszer kerüljön az oldalra. --}}
 @once
-    <div id="global-lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="global-lightbox-image">
-    </div>
+<div id="global-lightbox" class="lightbox">
+    <button class="lightbox-nav lightbox-prev" aria-label="Előző kép">&lt;</button>
+    <img class="lightbox-content" id="global-lightbox-image" alt="Nagyított kép">
+    <button class="lightbox-nav lightbox-next" aria-label="Következő kép">&gt;</button>
+    <span class="lightbox-close">&times;</span>
+</div>
 @endonce
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const carouselElement = document.getElementById('{{ $id }}');
-        if (!carouselElement) return; // Ha az elem nem található, ne csináljon semmit
-
-        const track = carouselElement.querySelectorAll('.carousel-track');
-        if (track) {
-            track.forEach(t => {
-                const slides = Array.from(t.children);
-                slides.forEach(slide => {
-                    const clone = slide.cloneNode(true);
-                    t.appendChild(clone);
-                });
-            });
-
-        }
-
-        // --- Lightbox Logic ---
-        const lightbox = document.getElementById('global-lightbox');
-        const lightboxImage = document.getElementById('global-lightbox-image');
-        const lightboxClose = lightbox.querySelector('.lightbox-close');
-        let isLightboxInitialized = false; // event flag to ensure global event listeners are added only once
-
-        const container = carouselElement.querySelector('.carousel-container');
-        if (container) {
-            container.addEventListener('click', function (event) {
-                if (event.target.tagName === 'IMG') {
-                    lightbox.classList.add('active');
-                    lightboxImage.src = event.target.src;
-                }
-            });
-        }
-
-        if (!document.body.dataset.lightboxInitialized) {
-            const closeLightbox = () => {
-                lightbox.classList.remove('active');
-            }
-
-            lightboxClose.addEventListener('click', closeLightbox);
-
-            lightbox.addEventListener('click', function (event) {
-                if (event.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape') {
-                    closeLightbox();
-                }
-            });
-
-            document.body.dataset.lightboxInitialized = true; // Mark that global event listeners are set up
-        }
-    });
-</script>
