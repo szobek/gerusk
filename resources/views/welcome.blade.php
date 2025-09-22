@@ -25,6 +25,18 @@
     <main>
         <x-caller-box />
         <div class="row-light">
+            <div class="column">
+                <x-overlap-images />
+            </div>
+            <div class="column">
+                <p class="text-color-primary">Nemecká kvalita aj na Slovensku!</p>
+                <h2>Dlhodobá ochrana a atraktívny vzhľad pre váš domov.</h2>
+                <p class="description">GERU je celosvetovo uznávaným odborníkom na strešné a fasádne nátery. Ponúkame vysoko kvalitné, odolné a dlhotrvajúce riešenia, vďaka ktorým bude váš domov vždy chránený a esteticky pôsobivý.
+<br>
+<br>
+Naše overené riešenia, ktoré sa už desaťročia úspešne používajú v Nemecku, pomáhajú chrániť a obnovovať domovy – a teraz sú dostupné aj pre vás.
+Či už ide o obnovu strechy alebo ochranu fasády, naše produkty ponúkajú dlhodobé riešenie, vďaka ktorému bude váš domov krajší a odolnejší voči vplyvom počasia.</p>
+            </div>
         </div>
         <x-boxes />
         <div class="row-dark">

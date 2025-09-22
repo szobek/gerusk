@@ -6,6 +6,7 @@
 @use 'nav';
 @use 'buttons';
 @use 'footer';
+@use 'overlap_images';
 
 body {
     font-family: 'Nunito', sans-serif;
@@ -67,12 +68,27 @@ header {
 main {
     .row-light {
         background-color: #f4f4f4;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        .column {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
+            padding-bottom: 100px;
+            h2, .description{
+                max-width: 400px;
+            }
+        }
+        min-height: 950px;
     }
 
     .row-dark,
     .row-light {
         padding: 20px;
-        min-height: 300px;
         height: auto;
         width: 100%;
 
@@ -143,4 +159,7 @@ main {
 
 .text-center{
     text-align: center;
+}
+.text-color-primary{
+    color: variables.$primary-text-color;
 }
