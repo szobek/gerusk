@@ -24,6 +24,8 @@
     </header>
     <main>
         <x-caller-box />
+        <div class="row-light">
+        </div>
         <x-boxes />
         <div class="row-dark">
             <div class="wrapper">
