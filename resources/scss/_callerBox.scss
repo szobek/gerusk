@@ -1,0 +1,130 @@
+@use 'variables';
+$callerbox-bg: #ffffff;
+$callerbox-secondary-text: #1f1f1f;
+$callerbox-border-color: #e9ecef;
+$callerbox-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+.caller-box-section {
+    width: 100%;
+    padding: 60px 0;
+    position: relative;
+    margin: -200px 0;
+}
+
+.caller-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $callerbox-bg;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: $callerbox-shadow;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.caller-box-text {
+    flex: 1 1 400px;
+
+    @media screen and (max-width: 600px) {
+        flex: 1 1 100%;
+    }
+
+    .title {
+        color: variables.$primary-text-color;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        color: $callerbox-secondary-text;
+        font-size: 2.2rem;
+        line-height: 1.3;
+        margin: 0;
+        line-height: 1.9rem;
+    }
+}
+
+.caller-box-form {
+    flex: 1 1 450px;
+
+    @media screen and (max-width: 600px) {
+        flex: 1 1 100%;
+    }
+
+    form {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+        flex: 1;
+        padding: 15px;
+        border: 1px solid $callerbox-border-color;
+        border-radius: 8px;
+        font-size: 1rem;
+        min-width: 180px;
+
+        &::placeholder {
+            color: #aaa;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $callerbox-secondary-text;
+        }
+    }
+
+    button {
+        padding: 15px 30px;
+        background-color: variables.$primary-text-color;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($callerbox-secondary-text, 10%);
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .caller-box {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .caller-box-text {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .caller-box-form {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .caller-box-form form {
+        flex-direction: column;
+
+        input,
+        button {
+            width: 100%;
+        }
+    }
+}
