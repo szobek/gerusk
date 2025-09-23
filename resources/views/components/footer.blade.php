@@ -44,4 +44,13 @@
 
         </div>
     </div>
+    <div class="break"></div>
+    <div class="wrapper">
+        <div class="section">
+            @Copyright 2025 Geru Tetok. Minden jog fenntartva.
+        </div>
+        <div class="section">
+            Powered by <a href="https://szobekweb.hu" target="_blank" rel="noopener">Szobek</a>
+        </div>
+    </div>
 </footer>
