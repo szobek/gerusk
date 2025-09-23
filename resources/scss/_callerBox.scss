@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'sass:color';
 $callerbox-bg: #ffffff;
 $callerbox-secondary-text: #1f1f1f;
 $callerbox-border-color: #e9ecef;
@@ -93,7 +94,7 @@ $callerbox-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: darken($callerbox-secondary-text, 10%);
+            background-color:  color.adjust(variables.$primary-text-color, $lightness: -10%);
         }
     }
 }
