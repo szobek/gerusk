@@ -153,5 +153,5 @@ Naše overené riešenia, ktoré sa už desaťročia úspešne používajú v Ne
             </div>
         </div>
     </main>
-    <x-footer />
+    
 @endsection

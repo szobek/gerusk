@@ -14,5 +14,6 @@
         <x-header />
     </header>
     @yield('body')
+    <x-footer />
 </body>
 </html>
