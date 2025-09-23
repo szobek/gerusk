@@ -1,9 +1,7 @@
 @extends('layout.app')
 @section('body')
 
-    <header>
-        <x-header />
-    </header>
+    
     <main>
         <x-caller-box />
         <div class="row-light">

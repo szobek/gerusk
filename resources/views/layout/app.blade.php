@@ -10,6 +10,9 @@
     @vite(['resources/scss/app.scss',"resources/css/normalize.css", 'resources/js/app.js'])
 </head>
 <body>
+    <header>
+        <x-header />
+    </header>
     @yield('body')
 </body>
 </html>

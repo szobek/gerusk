@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::get('/', function () {
-    $sended=false;
-    return view('welcome' ,compact('sended'));
-});
 
 
 Route::any('/send-test-email', function (Request $request) {
@@ -37,3 +33,19 @@ Route::any('/send-test-email', function (Request $request) {
 
     return redirect('/')->with('sended', true);
 })->name('email.test');
+
+/* ------------------------------------ pages ----------------------------------------------- */
+
+Route::get('/', function () {
+    $sended=false;
+    return view('welcome' ,compact('sended'));
+});
+
+
+Route::get('/stresny-nater', function () {
+    return view('stresni');
+})->name('stresni');
+
+Route::get('/fasadny-nater', function () {
+    return view('fasadni');
+})->name('fasadni');
