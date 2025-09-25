@@ -9,7 +9,7 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     @vite(['resources/assets/scss/app.scss',"resources/assets/css/normalize.css", 'resources/assets/js/app.js'])
 </head>
-<body>
+<body class="page-{{ Route::currentRouteName() ?? 'default' }}">
     <header>
         <x-header />
     </header>

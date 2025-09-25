@@ -66,7 +66,7 @@ Route::get('/', function () {
     ];
 
     return view('welcome', compact('sended', 'refSlides', 'galleryImages', 'examplesImages'));
-});
+})->name('home');
 
 
 Route::get('/stresny-nater', function () {

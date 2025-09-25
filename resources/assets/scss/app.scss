@@ -8,6 +8,7 @@
 @use 'footer';
 @use 'overlap_images';
 @use 'callerBox';
+@use 'header';
 @use 'stresni';
 
 body {
@@ -16,56 +17,7 @@ body {
     background-attachment: fixed;
 }
 
-header {
-    background: url('../assets/images/banner.jpg') no-repeat center center;
-    background-size: cover;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    min-height: 400px;
-    position: relative;
 
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        /* fekete, 40%-os áttetszőség */
-    }
-
-    .wrapper {
-        padding: 30px;
-        z-index: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-        overflow: hidden;
-
-        .logo {
-            width: fit-content;
-        }
-
-        .caller-btn {
-            a {
-                width: fit-content;
-                padding: 10px 20px;
-                background-color: #ff6600;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                font-weight: bold;
-            }
-        }
-
-        .banner-text {
-            color: #fff;
-            width: 100%;
-        }
-    }
-}
 
 main {
     .row-light {
