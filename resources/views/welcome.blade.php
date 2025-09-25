@@ -1,7 +1,5 @@
 @extends('layout.app')
 @section('body')
-
-    
     <main>
         <x-caller-box />
         <div class="row-light">
@@ -26,14 +24,14 @@ Naše overené riešenia, ktoré sa už desaťročia úspešne používajú v Ne
                 <div class="flex-container">
 
                     <div class="section">
-                        <img src="/images/rowImages/1.jpg" alt="services">
+                        <img src="{{ Vite::asset('resources/assets/images/rowImages/1.jpg') }}" alt="">
                         <p class="section-title">Obnova strechy</p>
                         <p class="description">Spoľahlivé a trvácne riešenia strešných náterov pre dlhodobú ochranu.
                             Osviežte svoju strechu prémiovými produktmi GERU!</p>
                         <p class="info"><a href="">Viac informácií - GERULAN®21 Strešný náter</a></p>
                     </div>
                     <div class="section">
-                        <img src="/images/rowImages/2.jpg" alt="services">
+                        <img src="{{ Vite::asset('resources/assets/images/rowImages/2.jpg') }}" alt="">
                         <p class="section-title">Obnova fasády</p>
                         <p class="description">Chráňte fasádu svojho domova inovatívnymi nátermi GERU, ktoré zabezpečia
                             dlhodobú čistotu a estetický vzhľad.</p>
@@ -90,7 +88,7 @@ Naše overené riešenia, ktoré sa už desaťročia úspešne používajú v Ne
                             </ul>
                         </div>
                         <div class="section">
-                            <img src="/images/rowImages/3.png" alt="services">
+                            <img src="{{ Vite::asset('resources/assets/images/rowImages/3.png') }}" alt="">
 
                         </div>
 
@@ -103,35 +101,8 @@ Naše overené riešenia, ktoré sa už desaťročia úspešne používajú v Ne
         <div class="row-house">
             <div class="wrapper">
 
-                @php
-                $galleryImages = [
-                    ['url' => asset('images/gallery/1.jpg'), 'alt' => 'Első kép'],
-                    ['url' => asset('images/gallery/2.jpg'), 'alt' => 'Második kép'],
-                    ['url' => asset('images/gallery/3.jpg'), 'alt' => 'Harmadik kép'],
-                    ['url' => asset('images/gallery/4.jpg'), 'alt' => 'Negyedik kép'],
-                    ['url' => asset('images/gallery/5.jpg'), 'alt' => 'Ötödik kép'],
-                    ['url' => asset('images/gallery/6.jpg'), 'alt' => 'Hatodik kép'],
-                    ['url' => asset('images/gallery/7.jpg'), 'alt' => 'Hetedik kép'],
-                    ['url' => asset('images/gallery/8.jpg'), 'alt' => 'Nyolcadik kép'],
-                    ['url' => asset('images/gallery/9.jpg'), 'alt' => 'Kilencedik kép'],
-                    ['url' => asset('images/gallery/10.jpg'), 'alt' => 'Tizedik kép'],
-                ];
-                    $examplesImages = [
-                        ['url' => asset('images/examples/1.jpg'), 'alt' => 'Első kép'],
-                        ['url' => asset('images/examples/2.jpg'), 'alt' => 'Második kép'],
-                        ['url' => asset('images/examples/3.jpg'), 'alt' => 'Harmadik kép'],
-                        ['url' => asset('images/examples/4.jpg'), 'alt' => 'Negyedik kép'],
-                        ['url' => asset('images/examples/5.jpg'), 'alt' => 'Ötödik kép'],
-                    ];
-                    $refImages = [
-                        ['url' => asset('images/ref/1.jpg'), 'alt' => 'Első kép'],
-                        ['url' => asset('images/ref/2.jpg'), 'alt' => 'Második kép'],
-                        ['url' => asset('images/ref/3.jpg'), 'alt' => 'Harmadik kép'],
-                        ['url' => asset('images/ref/4.jpg'), 'alt' => 'Negyedik kép'],
-                    ];
-                @endphp
                 <x-image-carousel title="Reference" subtitle="Rekonštrukcia fasády – Porovnanie pred a po realizácii"
-                    :images="$refImages" />
+                    :images="$refSlides" />
                 <x-image-carousel title="Ukážky našich realizácií" subtitle="Obnova strechy – Porovnanie pred a po realizácii" :images="$examplesImages" />
                 <x-image-carousel title="Fotogaléria" subtitle="Pozrite si našu galériu prác." :images="$galleryImages" />
 

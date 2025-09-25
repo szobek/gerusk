@@ -2,7 +2,9 @@ import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import.meta.glob([
+  '../images/**',
+]);
 
 let lightboxGalleryImages = [];
 let lightboxCurrentIndex = 0;

@@ -15,7 +15,7 @@
             <div class="swiper-wrapper">
                 @forelse ($images as $index => $image)
                     <div class="swiper-slide">
-                        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? 'Carousel kép' }}" data-index="{{ $index }}">
+                        <img src="{{ Vite::asset($image['url']) }}" alt="{{ $image['alt'] ?? 'Carousel kép' }}" data-index="{{ $index }}">
                     </div>
                 @empty
                     <div class="swiper-slide">
