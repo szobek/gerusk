@@ -64,13 +64,26 @@ Route::get('/', function () {
         ['url' => 'resources/assets/images/examples/4.jpg', 'alt' => 'Negyedik kép'],
         ['url' => 'resources/assets/images/examples/5.jpg', 'alt' => 'Ötödik kép'],
     ];
-
     return view('welcome', compact('sended', 'refSlides', 'galleryImages', 'examplesImages'));
 })->name('home');
 
 
 Route::get('/stresny-nater', function () {
-    return view('stresni');
+     
+    $tiles1 = [
+        ['url' => 'resources/assets/images/tiles/Anthrazit.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Bordeaux.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Dunkelbraun.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Rotbraun.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Ziegelrot.webp', 'alt' => ''],
+    ];
+    $tiles2 = [
+        ['url' => 'resources/assets/images/tiles/Noblesse_Rot.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Noblesse_Gruen-1.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Noblesse_blau.webp', 'alt' => ''],
+        ['url' => 'resources/assets/images/tiles/Klassikgrau2.webp', 'alt' => ''],
+    ];
+    return view('stresni',['tiles1'=>$tiles1,'tiles2'=>$tiles2]);
 })->name('stresni');
 
 Route::get('/fasadny-nater', function () {

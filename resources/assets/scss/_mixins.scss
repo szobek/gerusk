@@ -1,0 +1,21 @@
+@mixin generate-spacing-utilities($property, $prefix) {
+    @each $key, $value in $spacing-map {
+        .#{$prefix}-#{$key} {
+            #{$property}: $value;
+        }
+
+        .#{$prefix}x-#{$key} {
+            #{$property}-left: $value;
+            #{$property}-right: $value;
+        }
+        .#{$prefix}y-#{$key} {
+            #{$property}-top: $value;
+            #{$property}-bottom: $value;
+        }
+
+        .#{$prefix}t-#{$key} { #{$property}-top: $value; }
+        .#{$prefix}b-#{$key} { #{$property}-bottom: $value; }
+        .#{$prefix}l-#{$key} { #{$property}-left: $value; }
+        .#{$prefix}r-#{$key} { #{$property}-right: $value; }
+    }
+}

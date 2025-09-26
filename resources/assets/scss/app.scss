@@ -10,6 +10,8 @@
 @use 'callerBox';
 @use 'header';
 @use 'stresni';
+@use 'mixins';
+@use 'utilities';
 
 body {
     font-family: 'Nunito', sans-serif;
@@ -25,19 +27,6 @@ main {
         display: flex;
         width: 100%;
         flex-wrap: wrap;
-        .column {
-            width: 50%;
-            padding: 20px;
-            box-sizing: border-box;
-            @media screen and (max-width: 600px) {
-                width: 100%;
-            }
-            padding-bottom: 100px;
-            h2, .description{
-                max-width: 400px;
-            }
-        }
-        min-height: 950px;
     }
 
     .row-dark,
@@ -53,7 +42,7 @@ main {
         background-size: cover;
     }
 
-   
+
 
     .row-signup {
         background-color: #faf5e5;
@@ -61,15 +50,18 @@ main {
 
     .row-transparent {
         background-color: transparent;
-        p{
+
+        p {
             color: variables.$primary-text-color;
             font-weight: bold;
         }
-        h2{
+
+        h2 {
             color: white;
             font-size: 2.5rem;
             margin-top: 0;
             margin-bottom: 20px;
+
             @media (max-width: 600px) {
                 font-size: 1.8rem;
             }
@@ -95,12 +87,14 @@ main {
     padding: 20px;
 }
 
-.list-with-image-style{
+.list-with-image-style {
     list-style: none;
-    li{
+
+    li {
         padding-left: 30px;
         margin-bottom: 10px;
-        & svg{
+
+        & svg {
             width: 20px;
             height: 20px;
             position: absolute;
@@ -111,9 +105,96 @@ main {
     }
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
-.text-color-primary{
+
+.text-color-primary {
     color: variables.$primary-text-color;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.column {
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+
+    padding-bottom: 100px;
+
+    h2,
+    .description {
+        max-width: 400px;
+    }
+}
+
+.img-small {
+    max-width: 270px;
+    width: 100%;
+    height: auto;
+}
+
+.img-medium {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.block {
+    display: block;
+}
+
+.wide-column {
+    flex: 3;
+}
+
+
+.flex-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section {
+        flex: 1;
+        width: 100%;
+        min-width: 300px;
+
+        img {
+            width: 100%;
+            height: auto;
+            @media screen  and (max-width: 600px) {
+                max-width: 100%;
+            }
+        }
+
+        p.section-title {
+            font-weight: bold;
+        }
+
+        p.info {
+            a {
+                color: variables.$primary-text-color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+    }
 }

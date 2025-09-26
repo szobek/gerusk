@@ -1,0 +1,12 @@
+$base-spacing-unit: 0.25rem; 
+
+@for $i from 0 through 12 {
+    .gap-#{$i} {
+        gap: $base-spacing-unit * $i !important;
+    }
+}
+
+.up:hover {
+    transform: translateY(-10px) ;
+    transition-duration: 500ms;
+}
